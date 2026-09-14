@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+:root {
+  --color-champagne-light: #FAF8F5;
+  --color-champagne-warm: #F4ECE1;
+  --color-champagne-gold: #D4AF37;
+  --color-gold-foil: linear-gradient(135deg, #FFF6D9 0%, #F4E4BA 25%, #D4AF37 55%, #C29525 80%, #E6C76D 100%);
+  --color-text-ink: #2C1E25;
+  --color-text-muted: #6E5B65;
+}
+
+/* Custom Typography Helpers */
+.font-cinzel {
+  font-family: var(--font-cinzel), serif;
+}
+
+.font-playfair {
+  font-family: var(--font-playfair), Georgia, serif;
+}
+
+.font-amiri {
+  font-family: var(--font-amiri), serif;
+}
+
+.font-sans {
+  font-family: var(--font-jakarta), system-ui, -apple-system, sans-serif;
+}
+
+/* Gold Foil Text Shimmer */
+.gold-foil-text {
+  background: linear-gradient(135deg, #A8791C 0%, #D4AF37 35%, #F4E4BA 50%, #D4AF37 65%, #8C6110 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 1px 2px rgba(212, 175, 55, 0.2);
+}
+
+.gold-border-gradient {
+  border-image: linear-gradient(to right, transparent, #D4AF37, #FFF5D6, #D4AF37, transparent) 1;
+}
+
+/* 3D Perspective & Preservation */
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.perspective-1200 {
+  perspective: 1200px;
+}
+
+.perspective-1600 {
+  perspective: 1600px;
+}
+
+/* Hanging Lantern Swinging Pendulum Physics */
+@keyframes swingLanternLeft {
+  0% { transform: rotate(-3deg); }
+  100% { transform: rotate(2.5deg); }
+}
+
+@keyframes swingLanternRight {
+  0% { transform: rotate(2.8deg); }
+  100% { transform: rotate(-3deg); }
+}
+
+@keyframes swingLanternCenter {
+  0% { transform: translateX(-50%) rotate(-1.5deg); }
+  100% { transform: translateX(-50%) rotate(1.5deg); }
+}
+
+.animate-swing-left {
+  animation: swingLanternLeft 5s ease-in-out infinite alternate;
+  transform-origin: top center;
+}
+
+.animate-swing-right {
+  animation: swingLanternRight 5.4s ease-in-out infinite alternate;
+  transform-origin: top center;
+}
+
+.animate-swing-center {
+  animation: swingLanternCenter 6.2s ease-in-out infinite alternate;
+  transform-origin: top center;
+}
+
+/* Candle Flame Soft Pulse */
+@keyframes candleBloom {
+  0% { transform: scale(0.95); opacity: 0.75; }
+  50% { transform: scale(1.05); opacity: 0.95; }
+  100% { transform: scale(0.96); opacity: 0.78; }
+}
+
+.animate-candle-bloom {
+  animation: candleBloom 3s ease-in-out infinite;
+}
+
+/* Subtle Shimmer for Gold Elements */
+@keyframes shimmerGold {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer-foil {
+  background-size: 200% auto;
+  animation: shimmerGold 6s linear infinite;
+}
+
+/* Tactile Paper Texture Shadows */
+.shadow-paper {
+  box-shadow: 0 10px 30px -5px rgba(84, 61, 40, 0.1), 0 0 0 1px rgba(212, 175, 55, 0.25);
+}
+
+.shadow-paper-lg {
+  box-shadow: 0 25px 60px -12px rgba(84, 61, 40, 0.18), 0 0 0 1px rgba(212, 175, 55, 0.35);
+}
+
+/* Custom Delicate Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF8F5;
+}
+::-webkit-scrollbar-thumb {
+  background: #E5C16C;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D4AF37;
+}

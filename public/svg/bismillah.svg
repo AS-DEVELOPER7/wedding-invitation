@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 240" width="100%" height="100%">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF5D6" />
+      <stop offset="25%" stop-color="#E8C776" />
+      <stop offset="50%" stop-color="#C59B27" />
+      <stop offset="75%" stop-color="#E8C776" />
+      <stop offset="100%" stop-color="#9E731B" />
+    </linearGradient>
+    <filter id="goldGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#D4AF37" flood-opacity="0.35" />
+    </filter>
+  </defs>
+
+  <g fill="url(#goldGrad)" filter="url(#goldGlow)" text-anchor="middle">
+    <text x="500" y="145" font-family="'Amiri', 'Scheherazade New', serif" font-size="82" font-weight="bold" letter-spacing="3">
+      بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+    </text>
+    <path d="M 320 65 Q 500 45 680 65 Q 500 55 320 65 Z" opacity="0.85" />
+    <circle cx="500" cy="52" r="4" />
+    <circle cx="480" cy="54" r="2.5" />
+    <circle cx="520" cy="54" r="2.5" />
+
+    <path d="M 220 185 Q 400 195 470 185 L 475 190 Q 400 202 220 185 Z" opacity="0.9" />
+    <path d="M 780 185 Q 600 195 530 185 L 525 190 Q 600 202 780 185 Z" opacity="0.9" />
+
+    <g transform="translate(500, 187) scale(0.7)">
+      <polygon points="0,-18 5,-5 18,0 5,5 0,18 -5,5 -18,0 -5,-5" fill="url(#goldGrad)" />
+      <polygon points="-12,-12 0,-7 12,-12 7,0 12,12 0,7 -12,12 -7,0" fill="url(#goldGrad)" opacity="0.75" />
+      <circle cx="0" cy="0" r="3.5" fill="#FFF8E7" />
+    </g>
+  </g>
+</svg>
