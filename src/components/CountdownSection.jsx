@@ -229,7 +229,7 @@ export default function CountdownSection() {
         >
           <span className="w-1.5 h-1.5 rounded-full bg-borderColor-primary/80" />
           <p className="font-playfair text-[10.5px] sm:text-[11px] font-semibold tracking-wider text-textColor-primary">
-            {WEDDING_CONFIG.celebrationDates || "21st – 25th October 2026"} • Dungarpur, Rajasthan
+            Friday, 14th October 2026 • Dungarpur, Rajasthan
           </p>
           <span className="w-1.5 h-1.5 rounded-full bg-borderColor-primary/80" />
         </motion.div>

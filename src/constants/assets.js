@@ -56,11 +56,4 @@ export const ASSETS = {
     cardPatternGold: "/images/card-pattern-gold.png",
     paperTexture: "/images/paper-texture.jpg",
   },
-
-  // Program & Ceremonies Section Assets
-  program: {
-    islamicArch: "/images/islamic-arch-gold.png",
-    hangingLanterns: "/images/hanging-lanterns-gold.png",
-    palmTree: "/images/palm-tree-gold.png",
-  },
 };
