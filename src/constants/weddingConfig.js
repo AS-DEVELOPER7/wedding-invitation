@@ -8,7 +8,7 @@ export const WEDDING_CONFIG = {
   couple: {
     bride: {
       firstName: "Amatullah",
-      fullName: "Amatullah Dhulewala",
+      fullName: "Amatullah Dhulebwala",
       arabic: "أمة الله",
       relation: "Beloved Daughter",
     },
@@ -23,7 +23,7 @@ export const WEDDING_CONFIG = {
 
   // Parents Information
   parents: {
-    brideParents: "Ajab & Kaied Johar Dhulewala",
+    brideParents: "Ajab & Kaied Johar Dhulebwala",
     groomParents: "Nisrin ben & Ali Asgar bhai Naharwala",
   },
 
@@ -38,7 +38,9 @@ export const WEDDING_CONFIG = {
   },
 
   // Countdown Celebration Target Date (ISO format)
-  countdownTarget: "2026-010-24T18:00:00",
+  countdownTarget: "2026-10-21T10:00:00",
+  celebrationDates: "21st – 25th October 2026",
+  receptionDate: "25th October 2026",
 
   // Sacred Invocation Lines
   sacredText: {
@@ -53,7 +55,7 @@ export const WEDDING_CONFIG = {
     nikahDeclaration:
       "Nikah solemnised on Dast-e-mubarak of Syedna Aali Qadar Mufaddal Saifuddin (T.U.S) on 24th January 2025 (25 Rajab-ul-Asab 1447 H) in Surat.",
     invitationPreamble: "Thereafter we",
-    invitationHosts: "Ajab & Kaied Johar Dhulewala",
+    invitationHosts: "Ajab & Kaied Johar Dhulebwala",
     invitationRequest:
       "cordially request your presence to grace the Wedding Ceremony of our beloved daughter",
     groomParentage: "(S/O Nisrin ben & Ali Asgar bhai Naharwala)",
@@ -72,53 +74,102 @@ export const WEDDING_CONFIG = {
     ],
   },
 
-  // Event Program Timeline
+  // Program Itinerary Invitation Note
+  programInvitation: {
+    preamble: "With joy in our hearts,",
+    hosts: "Dhuleb Family invites you to the Wedding.",
+  },
+
+  // Event Program Timeline (5 Wedding Ceremonies)
   program: [
     {
-      id: "majlis",
-      titleArabic: "مجلس الفرح والدعاء المبارك",
-      titleEnglish: "Khushi Ni Majlis & Dua",
-      date: "Friday, 24th January 2025",
-      time: "5:30 PM Onwards",
-      venue: "Grand Community Hall",
-      city: "Surat, Gujarat",
-      description:
-        "Thanksgiving, prayers, and heartfelt Duas for the newly wedded couple.",
-      attire: "Traditional Modest Attire",
+      id: "manakthumb",
+      titleScript: "ManakThumb",
+      titleEnglish: "ManakThumb",
+      date: "21st October",
+      day: "Wednesday",
+      year: "2026",
+      venue: "AT Hall",
+      city: "Dungarpur, Rajasthan",
+      description: "Auspicious ceremonial pillar erection & sacred commencement blessings.",
+      attire: "Traditional Festive Attire",
+    },
+    {
+      id: "mehendi",
+      titleScript: "Mehendi",
+      titleEnglish: "Mehendi",
+      date: "22nd October",
+      day: "Thursday",
+      year: "2026",
+      venue: "At Hall",
+      city: "Dungarpur, Rajasthan",
+      description: "Ceremonial intricate henna celebration filled with joyous melodies.",
+      attire: "Vibrant Traditional Wear",
+    },
+    {
+      id: "mama-musala-majalis",
+      titleScript: "Mama Musala & Majalis",
+      titleEnglish: "Mama Musala & Majalis",
+      date: "23rd October",
+      day: "Friday",
+      year: "2026",
+      venue: "At Badri Mohallah",
+      city: "Dungarpur, Rajasthan",
+      description: "Sacred gathering of prayers, family honors, and heartfelt Duas.",
+      attire: "Traditional Bohra Attire",
+    },
+    {
+      id: "procession",
+      titleScript: "Procession",
+      titleEnglish: "Procession",
+      date: "24th October",
+      day: "Saturday",
+      year: "2026",
+      venue: "At Badri Mohallah",
+      city: "Dungarpur, Rajasthan",
+      description: "Royal celebratory bridal procession and grand wedding festivities.",
+      attire: "Royal Formal Attire",
     },
     {
       id: "reception",
-      titleArabic: "حفل الزفاف والوليمة",
-      titleEnglish: "Wedding Reception & Dinner",
-      date: "Friday, 24th January 2025",
-      time: "7:30 PM Onwards",
-      venue: "Al-Ezz Imperial Banquet Hall",
-      city: "Surat, Gujarat",
-      description:
-        "Celebratory banquet and reception with family, elders, and respected guests.",
-      attire: "Formal Evening Attire",
+      titleScript: "Reception",
+      titleEnglish: "Reception",
+      date: "25th October",
+      day: "Sunday",
+      year: "2026",
+      venue: "At Badri Mohallah",
+      city: "Dungarpur, Rajasthan",
+      description: "Celebratory banquet and joyous reception with respected family & guests.",
+      attire: "Elegant Evening Attire",
     },
   ],
 
+  // Family Residence
+  residence: {
+    title: "Our Residence",
+    address: "Shastri Colony Dungarpur, Rajasthan",
+    mapsUrl: "https://maps.google.com/?q=Shastri+Colony+Dungarpur+Rajasthan",
+  },
+
   // Venue & Travel Directions
   venue: {
-    name: "Al-Ezz Imperial Banquet Hall",
+    name: "Burhani Hall",
     subHall: "Grand Royal Ballroom & Courtyard",
-    address: "Ring Road, Surat, Gujarat, India",
-    city: "Surat",
+    address: "Ring Road, Dungarpur, Rajasthan, India",
+    city: "Dungarpur",
     country: "India",
-    googleMapsUrl: "https://maps.google.com/?q=Surat+Gujarat+India",
+    googleMapsUrl: "https://maps.google.com/?q=Dungarpur+Rajasthan+India",
     valetNote: "Complimentary valet parking available at the Main Entrance.",
   },
 
   // Calendar Event Details for Google Calendar / iCal
   calendar: {
-    title: "Wedding Ceremony: Amatullah & Abbas Ali",
+    title: "Wedding Celebrations: Amatullah & Abbas Ali",
     description:
-      "Wedding ceremony of Amatullah (D/O Ajab & Kaied Johar Dhulewala) with Abbas Ali (S/O Nisrin ben & Ali Asgar bhai Naharwala). Nikah on Dast-e-mubarak of Syedna Aali Qadar Mufaddal Saifuddin (T.U.S).",
-    location: "Al-Ezz Imperial Banquet Hall, Surat, Gujarat",
-    startDate: "20250124T173000",
-    endDate: "20250124T230000",
+      "Wedding ceremonies & celebrations of Amatullah (Dhulebwala) with Abbas Ali (Naharwala) from 21st to 25th October 2026 in Dungarpur, Rajasthan.",
+    location: "Dungarpur, Rajasthan",
+    startDate: "20261021T100000",
+    endDate: "20261025T230000",
   },
 
   // Traditional Closing Prayer (Dua)
@@ -128,6 +179,6 @@ export const WEDDING_CONFIG = {
     english:
       "May Allah bless you both, shower His blessings upon you, and unite you both in goodness.",
     gratitude:
-      "With heartfelt gratitude from the Dhulewala & Naharwala families.",
+      "With heartfelt gratitude from the Dhulebwala & Naharwala families.",
   },
 };

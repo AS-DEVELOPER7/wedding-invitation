@@ -1,34 +1,37 @@
-import { Cinzel_Decorative, Playfair_Display, Amiri, Plus_Jakarta_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const cinzel = Cinzel_Decorative({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-cinzel",
+// 1. Westonia (Local Luxury Display / Signature Script)
+const westonia = localFont({
+  src: "../fonts/Westonia.otf",
+  variable: "--font-westonia",
   display: "swap",
+  adjustFontFallback: false,
 });
 
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
+// 2. Allura (Local Royal Wedding Cursive Script)
+const allura = localFont({
+  src: "../fonts/Allura-Regular.ttf",
+  variable: "--font-allura",
+  display: "swap",
+  adjustFontFallback: false,
+});
+
+// 3. Playfair Display (Local High-End Editorial Serif)
+const playfair = localFont({
+  src: [
+    {
+      path: "../fonts/PlayfairDisplay-Regular.ttf",
+      style: "normal",
+    },
+    {
+      path: "../fonts/PlayfairDisplay-Italic.ttf",
+      style: "italic",
+    },
+  ],
   variable: "--font-playfair",
   display: "swap",
-});
-
-const amiri = Amiri({
-  subsets: ["arabic", "latin"],
-  weight: ["400", "700"],
-  style: ["normal", "italic"],
-  variable: "--font-amiri",
-  display: "swap",
-});
-
-const jakarta = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-jakarta",
-  display: "swap",
+  adjustFontFallback: false,
 });
 
 export const viewport = {
@@ -45,7 +48,7 @@ export const metadata = {
   keywords: [
     "Amatullah",
     "Abbas Ali",
-    "Dhulewala",
+    "Dhulebwala",
     "Naharwala",
     "Wedding Invitation",
     "Nikah Surat",
@@ -63,9 +66,9 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${cinzel.variable} ${playfair.variable} ${amiri.variable} ${jakarta.variable} scroll-smooth`}
+      className={`${westonia.variable} ${allura.variable} ${playfair.variable} scroll-smooth`}
     >
-      <body className="bg-[#FAF8F5] text-[#2C1E25] font-sans antialiased selection:bg-[#E5C16C]/30 selection:text-[#2C1E25] overflow-x-hidden">
+      <body className="bg-backgroundColor-primary text-textColor-primary font-playfair antialiased selection:bg-borderColor-secondary/30 selection:text-textColor-primary overflow-x-hidden">
         {children}
       </body>
     </html>

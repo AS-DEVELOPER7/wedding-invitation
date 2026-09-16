@@ -14,12 +14,12 @@ export default function Home() {
   const [envelopeState, setEnvelopeState] = useState("closed"); // "closed" | "opening" | "opened"
 
   useEffect(() => {
-    if (envelopeState !== "opened") {
-      document.body.style.overflow = "hidden";
-    } else {
+    // Ensure document body overflow remains auto for smooth scrolling
+    document.body.style.overflow = "auto";
+    return () => {
       document.body.style.overflow = "auto";
-    }
-  }, [envelopeState]);
+    };
+  }, []);
 
   const handleOpenStart = () => {
     setEnvelopeState("opening");
@@ -32,31 +32,31 @@ export default function Home() {
   const isRevealed = envelopeState === "opening" || envelopeState === "opened";
 
   return (
-    <div className="min-h-screen w-full bg-[#EFE8DC] sm:py-10 flex flex-col justify-center items-center relative overflow-x-hidden">
+    <div className="min-h-screen w-full bg-backgroundColor-ternary sm:py-6 flex flex-col justify-center items-center relative overflow-x-hidden">
       {/* Desktop Ambient Luxury Canvas Backdrop */}
-      <div className="fixed inset-0 pointer-events-none opacity-30 bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:20px_20px] hidden sm:block" />
-      <div className="fixed inset-0 pointer-events-none bg-gradient-to-b from-[#EFE8DC] via-transparent to-[#E2D5C3] hidden sm:block" />
+      <div className="fixed inset-0 pointer-events-none opacity-30 bg-[radial-gradient(var(--color-borderColor-primary)_1px,transparent_1px)] [background-size:20px_20px] hidden sm:block" />
+      <div className="fixed inset-0 pointer-events-none bg-gradient-to-b from-backgroundColor-ternary via-transparent to-backgroundColor-secondary hidden sm:block" />
 
       {/* Desktop Subtitle Badge indicating Mobile Experience */}
-      <div className="hidden sm:flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full bg-white/70 border border-[#D4AF37]/35 shadow-sm text-center z-10">
+      <div className="hidden sm:flex items-center gap-2 mb-3 px-4 py-1.5 rounded-full bg-backgroundColor-primary/80 border border-borderColor-primary/35 shadow-sm text-center z-10">
         <span className="text-xs">📱</span>
-        <span className="font-cinzel text-[11px] font-bold tracking-[0.2em] text-[#8C6B3E] uppercase">
+        <span className="font-playfair text-[11px] font-bold tracking-[0.2em] text-textColor-ternary uppercase">
           Exclusive Mobile Invitation
         </span>
       </div>
 
       {/* Mobile-Only Dedicated App Container (Edge-to-Edge on Mobile, Phone Bezel on Desktop) */}
       <main
-        className={`relative w-full max-w-[420px] bg-[#FAF8F5] text-[#2C1E25] selection:bg-[#E5C16C]/30 selection:text-[#2C1E25] z-10 ${
-          envelopeState === "opened"
-            ? "min-h-screen sm:min-h-[860px] overflow-x-hidden"
-            : "h-[100dvh] sm:h-[860px] overflow-hidden"
-        } sm:rounded-[44px] sm:shadow-[0_25px_80px_rgba(44,30,37,0.35),0_0_0_10px_#1C1418,0_0_0_12px_#D4AF37]`}
+        className={`relative w-full max-w-[420px] bg-backgroundColor-primary text-textColor-primary selection:bg-borderColor-secondary/30 selection:text-textColor-primary z-10 ${
+          envelopeState === "closed"
+            ? "h-[100dvh] sm:h-[min(840px,calc(100dvh-3.5rem))] overflow-hidden"
+            : "min-h-screen sm:min-h-[min(840px,calc(100dvh-3.5rem))] overflow-x-hidden"
+        } sm:rounded-[44px] sm:shadow-[0_25px_80px_rgba(44,30,37,0.35),0_0_0_10px_var(--color-textColor-primary),0_0_0_12px_var(--color-borderColor-primary)]`}
       >
         {/* Desktop Phone Mockup Speaker / Camera Pill (Dynamic Island) */}
-        <div className="hidden sm:flex absolute top-3 left-1/2 -translate-x-1/2 w-28 h-4 bg-[#1C1418] rounded-full z-50 items-center justify-center pointer-events-none">
-          <div className="w-2.5 h-2.5 rounded-full bg-[#2A1E24] mr-2" />
-          <div className="w-10 h-1 bg-[#2A1E24] rounded-full" />
+        <div className="hidden sm:flex absolute top-3 left-1/2 -translate-x-1/2 w-28 h-4 bg-textColor-primary rounded-full z-50 items-center justify-center pointer-events-none">
+          <div className="w-2.5 h-2.5 rounded-full bg-textColor-secondary mr-2" />
+          <div className="w-10 h-1 bg-textColor-secondary rounded-full" />
         </div>
 
         {/* 1. Interactive Envelope Gate (Overlay) */}

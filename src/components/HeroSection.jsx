@@ -5,135 +5,204 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { ASSETS } from "@/constants/assets";
 import { WEDDING_CONFIG } from "@/constants/weddingConfig";
+import OrnamentFlourish from "@/components/OrnamentFlourish";
 
 export default function HeroSection({ isOpening = true }) {
   return (
-    <motion.section
-      initial={{ y: 45, scale: 0.95 }}
-      animate={isOpening ? { y: 0, scale: 1 } : { y: 45, scale: 0.95 }}
-      transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
-      className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-[#FAF8F5]"
+    <section
+      className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-backgroundColor-primary"
     >
-      {/* Background Layer: Sunlit Moorish Archway, Palm Trees & Courtyard */}
+      {/* Background Layer: Sunlit Moorish Archway, Palm Trees & Courtyard (100% Visible) */}
       <div className="absolute inset-0 z-0">
         <Image
           src={ASSETS.hero.sunlitPalace}
           alt="Palatial Moorish Entrance"
           fill
           priority
-          className="object-cover object-top filter brightness-[1.02] contrast-[1.02]"
+          className="object-cover object-top"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#FAF8F5]/10 via-white/35 to-[#FAF8F5]/90" />
+        {/* Delicate subtle vignette at top edge */}
+        <div className="absolute inset-0 bg-gradient-to-b from-backgroundColor-primary/25 via-transparent via-60% to-transparent pointer-events-none" />
+        {/* Seamless bottom dissolve directly into backgroundColor-primary matching SacredInvitationCard */}
+        <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-b from-transparent via-backgroundColor-primary/45 to-backgroundColor-primary pointer-events-none" />
       </div>
 
-      {/* Hanging Brass Lanterns with Physical Pendulum Motion (Mobile Scaled) */}
-      <div className="absolute top-0 inset-x-0 h-[260px] z-10 pointer-events-none overflow-hidden">
-        <div className="absolute top-0 left-[2%] w-[58px] h-[200px] animate-swing-left">
-          <Image
-            src={ASSETS.hero.lanternLeft}
-            alt="Hanging Lantern"
-            fill
-            className="object-contain object-top"
-          />
+      {/* Floating Hero Typography (Directly over the Palace, Perfectly Centered under Chandelier) */}
+      <motion.div
+        initial="hidden"
+        animate={isOpening ? "visible" : "hidden"}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: {
+              staggerChildren: 0.18,
+              delayChildren: 0.35,
+            },
+          },
+        }}
+        className="relative z-20 w-full px-5 pt-[80%] pb-8 flex flex-col items-center text-center"
+      >
+        {/* 1. Royal Preamble: Delicate Tracking Expansion & Fade */}
+        <motion.p
+          variants={{
+            hidden: { opacity: 0, y: 12, letterSpacing: "0.22em" },
+            visible: {
+              opacity: 1,
+              y: 0,
+              letterSpacing: "0.3em",
+              transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] },
+            },
+          }}
+          className="font-playfair text-[9.5px] sm:text-[10px] font-bold text-textColor-ternary uppercase mb-1 filter drop-shadow-[0_1px_6px_rgba(255,255,255,0.95)]"
+        >
+          The Wedding Celebration of
+        </motion.p>
+
+        {/* Couple Names in Flowing Royal Calligraphy (Allura) */}
+        <div className="flex flex-col items-center my-0.5 select-none">
+          {/* 2. Bride's Name: Elegant Silk Glide */}
+          <motion.h1
+            variants={{
+              hidden: { opacity: 0, y: 18, scale: 0.96 },
+              visible: {
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                transition: { duration: 1.1, ease: [0.22, 1, 0.36, 1] },
+              },
+            }}
+            whileHover={{ scale: 1.025, transition: { duration: 0.35, ease: "easeOut" } }}
+            className="font-allura text-5xl sm:text-[58px] text-textColor-primary font-normal leading-[1.05] filter drop-shadow-[0_2px_14px_rgba(255,255,255,0.98)] drop-shadow-[0_1px_3px_rgba(255,255,255,1)] tracking-wide cursor-default transition-shadow"
+          >
+            Amatullah
+          </motion.h1>
+
+          {/* 3. Delicate Gold Ampersand with Expanding Accent Lines */}
+          <motion.div
+            variants={{
+              hidden: { opacity: 0 },
+              visible: {
+                opacity: 1,
+                transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
+              },
+            }}
+            className="flex items-center gap-3 my-0.5"
+          >
+            {/* Left Accent Line: Smooth Scale from Center */}
+            <motion.span
+              variants={{
+                hidden: { scaleX: 0, opacity: 0 },
+                visible: {
+                  scaleX: 1,
+                  opacity: 1,
+                  transition: { duration: 0.85, ease: [0.22, 1, 0.36, 1] },
+                },
+              }}
+              style={{ originX: 1 }}
+              className="w-8 h-[1px] bg-gradient-to-r from-transparent to-textColor-ternary filter drop-shadow-[0_1px_4px_rgba(255,255,255,0.9)]"
+            />
+
+            {/* Ampersand: Soft Scale-In & Fade */}
+            <motion.span
+              variants={{
+                hidden: { opacity: 0, scale: 0.65 },
+                visible: {
+                  opacity: 1,
+                  scale: 1,
+                  transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] },
+                },
+              }}
+              className="font-allura text-3xl sm:text-4xl text-textColor-ternary font-normal italic filter drop-shadow-[0_1px_6px_rgba(255,255,255,0.95)] select-none inline-block leading-none"
+            >
+              &amp;
+            </motion.span>
+
+            {/* Right Accent Line: Smooth Scale from Center */}
+            <motion.span
+              variants={{
+                hidden: { scaleX: 0, opacity: 0 },
+                visible: {
+                  scaleX: 1,
+                  opacity: 1,
+                  transition: { duration: 0.85, ease: [0.22, 1, 0.36, 1] },
+                },
+              }}
+              style={{ originX: 0 }}
+              className="w-8 h-[1px] bg-gradient-to-l from-transparent to-textColor-ternary filter drop-shadow-[0_1px_4px_rgba(255,255,255,0.9)]"
+            />
+          </motion.div>
+
+          {/* 4. Groom's Name: Matching Royal Glide */}
+          <motion.h2
+            variants={{
+              hidden: { opacity: 0, y: 18, scale: 0.96 },
+              visible: {
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                transition: { duration: 1.1, ease: [0.22, 1, 0.36, 1] },
+              },
+            }}
+            whileHover={{ scale: 1.025, transition: { duration: 0.35, ease: "easeOut" } }}
+            className="font-allura text-5xl sm:text-[58px] text-textColor-primary font-normal leading-[1.05] filter drop-shadow-[0_2px_14px_rgba(255,255,255,0.98)] drop-shadow-[0_1px_3px_rgba(255,255,255,1)] tracking-wide cursor-default transition-shadow"
+          >
+            Abbas Ali
+          </motion.h2>
         </div>
 
-        <div className="absolute top-0 left-1/2 w-[92px] h-[220px] animate-swing-center">
-          <Image
-            src={ASSETS.hero.lanternCenter}
-            alt="Grand Chandelier"
-            fill
-            className="object-contain object-top filter drop-shadow-md"
-          />
-        </div>
-
-        <div className="absolute top-0 right-[2%] w-[58px] h-[205px] animate-swing-right">
-          <Image
-            src={ASSETS.hero.lanternRight}
-            alt="Hanging Lantern"
-            fill
-            className="object-contain object-top"
-          />
-        </div>
-      </div>
-
-      {/* Hero Typography & Content (Illuminated as Card Emerges) */}
-      <div className="relative z-20 w-full px-5 pt-28 pb-14 flex flex-col items-center text-center mt-4">
-        {/* Bismillah Sacred Calligraphy */}
-        <div className="w-[82%] max-w-[320px] h-auto mb-4 filter drop-shadow-sm">
-          <Image
-            src={ASSETS.svg.bismillah}
-            alt="Bismillah ir-Rahman ir-Rahim"
-            width={340}
-            height={75}
-            priority
-            className="w-full h-auto"
-          />
-        </div>
-
-        {/* Royal Monogram Medallion */}
-        <div className="w-16 h-16 mb-3 filter drop-shadow-md">
-          <Image
-            src={ASSETS.svg.monogram}
-            alt="Monogram A & A"
-            width={64}
-            height={64}
-            priority
-            className="w-full h-full"
-          />
-        </div>
-
-        {/* Couple Names in Arabic Calligraphy */}
-        <h2 className="font-amiri text-2xl sm:text-3xl font-bold text-[#8C6110] mb-2 tracking-wide direction-rtl drop-shadow-sm">
-          {WEDDING_CONFIG.couple.bride.arabic} &amp; {WEDDING_CONFIG.couple.groom.arabic}
-        </h2>
-
-        {/* Couple Names in Royal Latin Typography (Mobile First Stacked Layout) */}
-        <h1 className="font-cinzel text-2xl sm:text-3xl font-bold tracking-[0.14em] text-[#2C1E25] mb-5 uppercase flex flex-col items-center leading-tight">
-          <span>{WEDDING_CONFIG.couple.bride.firstName}</span>
-          <span className="font-playfair italic font-normal text-xl sm:text-2xl text-[#C59B27] my-0.5">
-            &amp;
-          </span>
-          <span>{WEDDING_CONFIG.couple.groom.firstName}</span>
-        </h1>
-
-        {/* Nikah Solemnisation Honorific Card */}
-        <div className="bg-white/90 backdrop-blur-md px-4 py-2.5 rounded-2xl border border-[#D4AF37]/50 shadow-sm shadow-[#8C6110]/10 mb-4 w-full max-w-[340px]">
-          <p className="font-playfair italic text-[11px] text-[#8C6B3E]">
-            Nikah Solemnised on
-          </p>
-          <p className="font-cinzel text-[11px] sm:text-xs font-bold tracking-wider text-[#2C1E25] uppercase mt-0.5 leading-snug">
-            {WEDDING_CONFIG.nikah.authorityFull}
-          </p>
-        </div>
-
-        {/* Date and Location Subtitle */}
-        <p className="font-sans text-[11px] sm:text-xs tracking-[0.2em] text-[#6E5B65] uppercase mb-8">
-          {WEDDING_CONFIG.nikah.dateGregorian} • {WEDDING_CONFIG.nikah.city}
-        </p>
-
-        {/* Floating Scroll Indicator */}
+        {/* 5. Date Pill: Regal Entrance with Subtle Hover Micro-Interaction */}
         <motion.div
-          animate={{ y: [0, 6, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          className="flex flex-col items-center gap-1.5 cursor-pointer pt-2"
+          variants={{
+            hidden: { opacity: 0, y: 14, scale: 0.93 },
+            visible: {
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              transition: { duration: 0.95, ease: [0.22, 1, 0.36, 1] },
+            },
+          }}
+          whileHover={{ scale: 1.035, transition: { duration: 0.25, ease: "easeOut" } }}
+          className="mt-3.5 mb-7 flex items-center gap-2 px-4 py-1 rounded-full bg-backgroundColor-primary/75 backdrop-blur-[3px] border border-borderColor-primary/45 shadow-xs filter drop-shadow-[0_1px_6px_rgba(255,255,255,0.8)] cursor-default transition-all"
+        >
+          <span className="text-[7px] text-textColor-ternary">◆</span>
+          <p className="font-sans text-[11px] sm:text-xs tracking-[0.2em] font-bold text-textColor-primary uppercase">
+            {WEDDING_CONFIG.receptionDate}
+          </p>
+          <span className="text-[7px] text-textColor-ternary">◆</span>
+        </motion.div>
+
+        {/* 6. Floating Scroll Indicator: Graceful Entrance + Continuous Float */}
+        <motion.div
+          variants={{
+            hidden: { opacity: 0, y: 12 },
+            visible: {
+              opacity: 1,
+              y: 0,
+              transition: { duration: 1.0, ease: [0.22, 1, 0.36, 1] },
+            },
+          }}
+          className="flex flex-col items-center gap-1.5 cursor-pointer select-none"
           onClick={() => {
             const cardElem = document.getElementById("sacred-card");
             cardElem?.scrollIntoView({ behavior: "smooth" });
           }}
         >
-          <span className="font-cinzel text-[10px] tracking-[0.25em] text-[#8C6B3E] uppercase">
-            Scroll to View Invitation
-          </span>
-          <svg
-            className="w-4 h-4 text-[#D4AF37]"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
+          <motion.div
+            animate={{ y: [0, 5, 0] }}
+            transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+            className="flex flex-col items-center gap-1.5"
           >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-          </svg>
+            <span className="font-playfair text-[10px] tracking-[0.25em] font-bold text-textColor-ternary uppercase filter drop-shadow-[0_1px_6px_rgba(255,255,255,0.95)]">
+              Scroll to View Invitation
+            </span>
+            <div className="filter drop-shadow-[0_1px_4px_rgba(255,255,255,0.9)]">
+              <OrnamentFlourish orientation="vertical" height={40} width={10} opacity={0.9} />
+            </div>
+          </motion.div>
         </motion.div>
-      </div>
-    </motion.section>
+
+      </motion.div>
+    </section>
   );
 }

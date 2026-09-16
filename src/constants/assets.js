@@ -9,12 +9,16 @@ export const ASSETS = {
     cover: "/images/envelope-cover.jpg",
     waxSeal: "/images/wax-seal-gold.png",
     paperTexture: "/images/paper-texture.jpg",
+    pattern: "/images/envelope-pattern.png",
+    patternTransparent: "/images/envelope-pattern-transparent.png",
     wineCover: "/images/wine-envelope-cover.jpg",
   },
 
   // Hero Section Sunlit Palatial Architecture
   hero: {
-    sunlitPalace: "/images/hero-archway-sunlit.jpg",
+    sunlitPalace: "/images/hero-archway-blended.jpg", // Softly blurred & blended at bottom into SacredInvitationCard background
+    sunlitPalaceSerene: "/images/hero-archway-serene.jpg", // Sharp unblended serene vista (revert anytime)
+    sunlitPalaceClassic: "/images/hero-archway-sunlit.jpg", // Original version with mansion & trees (revert anytime)
     palaceNight: "/images/palace-night.jpg",
     lanternLeft: "/svg/lantern-left.svg",
     lanternRight: "/svg/lantern-right.svg",
@@ -25,7 +29,9 @@ export const ASSETS = {
   svg: {
     bismillah: "/svg/bismillah.svg",
     monogram: "/svg/monogram-aa.svg",
-    flourish: "/svg/flourish.svg",
+    flourish: "/images/flourish.png",
+    flourishHorizontal: "/images/flourish-horizontal.png",
+    flourishVertical: "/images/flourish-vertical.png",
     geometricCorner: "/svg/geometric-corner.svg",
     zelligeBorder: "/svg/zellige-border.svg",
   },
@@ -38,5 +44,23 @@ export const ASSETS = {
   // Audio Music Track
   audio: {
     weddingTrack: "/audio/wedding-music.mp3",
+  },
+
+  // Sacred Invitation Card Assets
+  sacredCard: {
+    bismillahArtistic: "/images/bismillah-artistic.png",
+    bismillahArtisticGold: "/images/bismillah-artistic-gold.png",
+    ornamentalFrame: "/images/ornamental-frame.png",
+    ornamentalFrameTop: "/images/ornamental-frame-top.png",
+    ornamentalFrameBottom: "/images/ornamental-frame-bottom.png",
+    cardPatternGold: "/images/card-pattern-gold.png",
+    paperTexture: "/images/paper-texture.jpg",
+  },
+
+  // Program & Ceremonies Section Assets
+  program: {
+    islamicArch: "/images/islamic-arch-gold.png",
+    hangingLanterns: "/images/hanging-lanterns-gold.png",
+    palmTree: "/images/palm-tree-gold.png",
   },
 };

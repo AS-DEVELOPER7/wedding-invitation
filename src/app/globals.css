@@ -1,29 +1,83 @@
 @import "tailwindcss";
+@config "../../tailwind.config.js";
 
-:root {
-  --color-champagne-light: #FAF8F5;
-  --color-champagne-warm: #F4ECE1;
-  --color-champagne-gold: #D4AF37;
-  --color-gold-foil: linear-gradient(135deg, #FFF6D9 0%, #F4E4BA 25%, #D4AF37 55%, #C29525 80%, #E6C76D 100%);
-  --color-text-ink: #2C1E25;
-  --color-text-muted: #6E5B65;
+@theme {
+  /* 📜 Background Colors: Primary, Secondary, Ternary */
+  --color-backgroundColor-primary: #FAF8F5;
+  --color-backgroundColor-secondary: #F4ECE1;
+  --color-backgroundColor-ternary: #EFE8DC;
+  --color-backgroundColor-tertiary: #EFE8DC;
+
+  /* 🖋️ Text Colors: Primary, Secondary, Ternary */
+  --color-textColor-primary: #2C1E25;
+  --color-textColor-secondary: #6E5B65;
+  --color-textColor-ternary: #8C6110;
+  --color-textColor-tertiary: #8C6110;
+
+  /* ⚜️ Border Colors: Primary, Secondary, Ternary */
+  --color-borderColor-primary: #D4AF37;
+  --color-borderColor-secondary: #E5C16C;
+  --color-borderColor-ternary: #EFE8DC;
+  --color-borderColor-tertiary: #EFE8DC;
+
+  /* Exclusive Font Families (Westonia, Allura, Playfair Display) */
+  --font-westonia: var(--font-westonia), cursive, serif;
+  --font-allura: var(--font-allura), cursive;
+  --font-playfair: var(--font-playfair), Georgia, serif;
+  --font-sans: var(--font-playfair), Georgia, serif;
 }
 
+/* Local Font-Face Fallback Declarations */
+@font-face {
+  font-family: "Westonia";
+  src: url("/fonts/Westonia.otf") format("opentype"),
+       url("/fonts/Westonia.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Allura";
+  src: url("/fonts/Allura-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Playfair Display";
+  src: url("/fonts/PlayfairDisplay-Regular.ttf") format("truetype");
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Playfair Display";
+  src: url("/fonts/PlayfairDisplay-Italic.ttf") format("truetype");
+  font-weight: 400 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+
+
 /* Custom Typography Helpers */
-.font-cinzel {
-  font-family: var(--font-cinzel), serif;
+.font-westonia {
+  font-family: var(--font-westonia), "Westonia", cursive, serif;
+}
+
+.font-allura {
+  font-family: var(--font-allura), "Allura", cursive;
 }
 
 .font-playfair {
-  font-family: var(--font-playfair), Georgia, serif;
-}
-
-.font-amiri {
-  font-family: var(--font-amiri), serif;
+  font-family: var(--font-playfair), "Playfair Display", Georgia, serif;
 }
 
 .font-sans {
-  font-family: var(--font-jakarta), system-ui, -apple-system, sans-serif;
+  font-family: var(--font-playfair), "Playfair Display", Georgia, serif;
 }
 
 /* Gold Foil Text Shimmer */
