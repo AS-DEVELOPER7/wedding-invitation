@@ -4,30 +4,6 @@
  */
 
 export const WEDDING_CONFIG = {
-  // App & Desktop Experience Text
-  app: {
-    desktopBadge: "Exclusive Mobile Invitation",
-  },
-
-  // Audio Music Controller
-  audio: {
-    playTitle: "Play Wedding Music",
-    pauseTitle: "Pause Wedding Music",
-    ariaLabel: "Toggle Background Music",
-  },
-
-  // Envelope Gate & Wax Seal
-  envelope: {
-    tapPrompt: "Tap the seal to open",
-    sealAlt: "Gold Wax Seal Bismillah",
-  },
-
-  // Hero Section Sunlit Palatial Entrance
-  hero: {
-    preamble: "The Wedding Celebration of",
-    scrollPrompt: "Scroll to View Invitation",
-  },
-
   // Couple Information
   couple: {
     bride: {
@@ -75,28 +51,22 @@ export const WEDDING_CONFIG = {
       "& dua Mubarak of Al-Hayul-Muqaddas Syedna Mohammed Burhanuddin (R.A.)",
     vasilaLine4:
       "& Blessings of Dai uz Zaman his Holiness Syedna Aali Qadar Mufaddal Saifuddin Maula (T.U.S)",
-    nikahHeading: "Nikah Solemnised on Dast-e-Mubarak",
     nikahDeclaration:
       "Nikah solemnised on Dast-e-mubarak of Syedna Aali Qadar Mufaddal Saifuddin (T.U.S) on 24th January 2025 (25 Rajab-ul-Asab 1447 H) in Surat.",
     invitationPreamble: "Thereafter we",
     invitationHosts: "Ajab & Kaied Johar Dhulebwala",
     invitationRequest:
       "cordially request your presence to grace the Wedding Ceremony of our beloved daughter",
-    conjunction: "with",
     groomParentage: "(S/O Nisrin ben & Ali Asgar bhai Naharwala)",
   },
 
   // Family Honors & Blessings
   familyHonors: {
-    title: "Family Honors & Blessings",
-    withBlessingsOfLabel: "With Blessings Of:",
     withBlessingsOf: [
       "RUQAIYA BEN & LATE SHABBIR HUSSAIN DHULEBWALA (DADI-DADA)",
       "KHADIJA BEN & LATE MOIZ HUSSAIN KARIMJIWALA (NANI-NANA)",
     ],
-    specialRequestLabel: "Special Request:",
     specialRequest: ["ZAHRA & HUSSAIN DHULEBWALA (BHABI-BHAI)"],
-    withBestComplimentsFromLabel: "With Best Compliments From:",
     withBestComplimentsFrom: [
       "Faiji-fuaji, Kaka-kaki, Masi-masaji, Mama-mami,",
       "All cousins, All Dhulebwala and Karimjiwala family.",
@@ -105,8 +75,6 @@ export const WEDDING_CONFIG = {
 
   // Event Program Timeline
   program: {
-    subtitle: "Wedding Itinerary",
-    title: "Ceremonies & Functions",
     intro: {
       lead: "With joy in our hearts,",
       invitation: "Dhuleb Family invites you to the Wedding.",
@@ -179,40 +147,15 @@ export const WEDDING_CONFIG = {
     ],
   },
 
-  // Live Countdown Section
-  countdown: {
-    subtitle: "Counting Down the Moments",
-    title: "To The Blessed Celebrations",
-    dateLocation: "21st – 25th October 2026 • Dungarpur, Rajasthan",
-    units: {
-      days: "Days",
-      hours: "Hours",
-      minutes: "Mins",
-      seconds: "Secs",
-    },
-    buttons: {
-      googleCalendar: "Google Calendar",
-      appleCalendar: "Apple Calendar",
-    },
-  },
-
   // Venue & Travel Directions
   venue: {
-    subtitle: "Location & Directions",
-    title: "Wedding Venues",
     name: "Burhani Hall",
     subHall: "Grand Royal Ballroom & Ceremonial Courtyard",
     address: "Ring Road, Dungarpur, Rajasthan, India",
-    addressTitle: "Address & Directions",
     city: "Dungarpur",
     country: "India",
     googleMapsUrl: "https://maps.google.com/?q=Burhani+Hall+Dungarpur+Rajasthan",
     valetNote: "Complimentary guest parking available at the venue entrance.",
-    buttons: {
-      openInMaps: "Open in Maps",
-      copyAddress: "Copy Address",
-      addressCopied: "Address Copied!",
-    },
     locations: [
       {
         id: "burhani-hall",
@@ -260,7 +203,7 @@ export const WEDDING_CONFIG = {
     endDate: "20261025T230000",
   },
 
-  // Traditional Closing Prayer (Dua) & Gratitude Signoff
+  // Traditional Closing Prayer (Dua)
   closingDua: {
     arabic:
       "بَارَكَ اللَّهُ لَكُمَا وَبَارَكَ عَلَيْكُمَا وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ",
@@ -268,7 +211,5 @@ export const WEDDING_CONFIG = {
       "May Allah bless you both, shower His blessings upon you, and unite you both in goodness.",
     gratitude:
       "With heartfelt gratitude from the Dhulebwala & Naharwala families.",
-    gratitudeLead: "With heartfelt gratitude,",
-    familySignoff: "Dhulebwala & Naharwala Families",
   },
 };
