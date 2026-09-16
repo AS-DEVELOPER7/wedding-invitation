@@ -4,6 +4,7 @@ import React, { useState, useEffect, useCallback, useRef, useMemo } from "react"
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ASSETS } from "@/constants/assets";
+import { WEDDING_CONFIG } from "@/constants/weddingConfig";
 import OrnamentFlourish from "@/components/OrnamentFlourish";
 
 /**
@@ -442,7 +443,7 @@ export default function EnvelopeGate({
         <div className="relative w-full h-full filter drop-shadow-[0_6px_14px_rgba(70,45,30,0.38)] hover:scale-115 hover:duration-300 hover:ease-in-out active:scale-95 transition-transform">
           <Image
             src={ASSETS.envelope.waxSeal}
-            alt="Gold Wax Seal Bismillah"
+            alt={WEDDING_CONFIG.envelope.sealAlt}
             fill
             priority
             sizes="96px"
@@ -461,7 +462,7 @@ export default function EnvelopeGate({
         className="absolute inset-x-0 z-35 flex flex-col items-center pointer-events-none text-center px-4"
       >
         <p className="font-allura font-semibold italic text-base tracking-[0.14em] text-textColor-ternary mb-1">
-          Tap the seal to open
+          {WEDDING_CONFIG.envelope.tapPrompt}
         </p>
         <OrnamentFlourish
           orientation={flourishOrientation}

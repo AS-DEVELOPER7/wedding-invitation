@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="goldAA" x1="10%" y1="0%" x2="90%" y2="100%">
+      <stop offset="0%" stop-color="#FFF5D6" />
+      <stop offset="30%" stop-color="#ECC86B" />
+      <stop offset="70%" stop-color="#D4AF37" />
+      <stop offset="90%" stop-color="#A57A18" />
+      <stop offset="100%" stop-color="#ECC86B" />
+    </linearGradient>
+    <linearGradient id="bgAA" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#36222D" />
+      <stop offset="100%" stop-color="#21151B" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Royal Velvet Plum Badge (High Contrast on both Light and Dark Browser Tabs) -->
+  <rect width="64" height="64" rx="16" fill="url(#bgAA)" />
+  <rect x="2.5" y="2.5" width="59" height="59" rx="13.5" fill="none" stroke="url(#goldAA)" stroke-width="1.5" stroke-opacity="0.85" />
+  
+  <!-- Double A Simple Text Monogram (Amatullah & Abbas Ali) -->
+  <text x="32" y="44" 
+        font-family="'Playfair Display', Georgia, 'Times New Roman', serif" 
+        font-size="34" 
+        font-weight="700" 
+        letter-spacing="-2" 
+        fill="url(#goldAA)" 
+        text-anchor="middle">AA</text>
+</svg>

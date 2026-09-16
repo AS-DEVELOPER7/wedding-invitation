@@ -88,7 +88,7 @@ export default function CountdownSection() {
   )}&dates=${WEDDING_CONFIG.calendar.startDate}/${WEDDING_CONFIG.calendar.endDate}`;
 
   return (
-    <section className="relative py-16 px-4 sm:px-6 bg-gradient-to-b from-backgroundColor-secondary to-backgroundColor-primary text-center overflow-hidden">
+    <section className="relative py-16 px-4 sm:px-6 bg-gradient-to-b from-backgroundColor-primary via-[#FAF6F0] to-backgroundColor-secondary text-center overflow-hidden">
       {/* Ambient Warm Golden Backlight Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[380px] h-[260px] bg-[radial-gradient(circle,rgba(212,175,55,0.12)_0%,transparent_70%)] pointer-events-none blur-2xl" />
 
@@ -229,13 +229,13 @@ export default function CountdownSection() {
         >
           <span className="w-1.5 h-1.5 rounded-full bg-borderColor-primary/80" />
           <p className="font-playfair text-[10.5px] sm:text-[11px] font-semibold tracking-wider text-textColor-primary">
-            Friday, 14th October 2026 • Dungarpur, Rajasthan
+            21st – 25th October 2026 • Dungarpur, Rajasthan
           </p>
           <span className="w-1.5 h-1.5 rounded-full bg-borderColor-primary/80" />
         </motion.div>
 
         {/* Bespoke Luxury Calendar Action Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full max-w-[340px] mx-auto">
+        <div className="flex flex-col  items-center justify-center gap-3 w-full max-w-[340px] mx-auto">
           {/* Google Calendar Button */}
           <motion.a
             href={googleCalendarUrl}
@@ -243,7 +243,7 @@ export default function CountdownSection() {
             rel="noopener noreferrer"
             whileHover={{ y: -2, scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="w-full sm:w-1/2 inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#2C1E25] via-[#3E2A34] to-[#2C1E25] text-[#FAF8F5] font-playfair text-[11px] sm:text-xs font-bold tracking-wider py-3 px-3.5 rounded-xl border border-borderColor-primary/50 shadow-[0_4px_16px_rgba(44,30,37,0.2)] hover:shadow-[0_6px_20px_rgba(140,97,16,0.25)] transition-all group"
+            className="w-full  inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#2C1E25] via-[#3E2A34] to-[#2C1E25] text-[#FAF8F5] font-playfair text-[11px] sm:text-xs font-bold tracking-wider py-3 px-3.5 rounded-xl border border-borderColor-primary/50 shadow-[0_4px_16px_rgba(44,30,37,0.2)] hover:shadow-[0_6px_20px_rgba(140,97,16,0.25)] transition-all group"
           >
             {/* Bespoke Gold Calendar Icon */}
             <svg viewBox="0 0 20 20" className="w-4 h-4 text-[#D4AF37] fill-current group-hover:scale-110 transition-transform" aria-hidden="true">
@@ -257,13 +257,13 @@ export default function CountdownSection() {
             onClick={handleDownloadIcs}
             whileHover={{ y: -2, scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="w-full sm:w-1/2 inline-flex items-center justify-center gap-2 bg-gradient-to-b from-[#FFFDFB] to-[#F5ECE0] text-textColor-primary font-playfair text-[11px] sm:text-xs font-bold tracking-wider py-3 px-3.5 rounded-xl border border-borderColor-primary/60 shadow-[0_2px_12px_rgba(140,97,16,0.1)] hover:border-borderColor-primary hover:shadow-[0_4px_16px_rgba(140,97,16,0.18)] transition-all group"
+            className="w-full  inline-flex items-center justify-center gap-2 bg-gradient-to-b from-[#FFFDFB] to-[#F5ECE0] text-textColor-primary font-playfair text-[11px] sm:text-xs font-bold tracking-wider py-3 px-3.5 rounded-xl border border-borderColor-primary/60 shadow-[0_2px_12px_rgba(140,97,16,0.1)] hover:border-borderColor-primary hover:shadow-[0_4px_16px_rgba(140,97,16,0.18)] transition-all group"
           >
             {/* Bespoke Gold iCal Download Icon */}
             <svg viewBox="0 0 20 20" className="w-4 h-4 text-[#8C6110] fill-current group-hover:scale-110 transition-transform" aria-hidden="true">
               <path d="M10 2a1 1 0 0 1 1 1v7.59l2.3-2.3a1 1 0 1 1 1.4 1.42l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 0 1 1.4-1.42L9 10.59V3a1 1 0 0 1 1-1zm-6 13a1 1 0 0 1 1-1h10a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1z" />
             </svg>
-            <span>Apple / iCal</span>
+            <span>Apple Calendar</span>
           </motion.button>
         </div>
       </div>

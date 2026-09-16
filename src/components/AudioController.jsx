@@ -14,32 +14,32 @@ export default function AudioController({ autoPlayTrigger }) {
     }
   }, []);
 
-  // useEffect(() => {
-  //   if (autoPlayTrigger && audioRef.current && audioAvailable) {
-  //     audioRef.current
-  //       .play()
-  //       .then(() => setIsPlaying(true))
-  //       .catch(() => {
-  //         setIsPlaying(false);
-  //       });
-  //   }
-  // }, [autoPlayTrigger, audioAvailable]);
+  useEffect(() => {
+    if (autoPlayTrigger && audioRef.current && audioAvailable) {
+      audioRef.current
+        .play()
+        .then(() => setIsPlaying(true))
+        .catch(() => {
+          setIsPlaying(false);
+        });
+    }
+  }, [autoPlayTrigger, audioAvailable]);
 
   const toggleAudio = () => {
     if (!audioRef.current) return;
 
-    // if (isPlaying) {
-    //   audioRef.current.pause();
-    //   setIsPlaying(false);
-    // } else {
-    //   audioRef.current
-    //     .play()
-    //     .then(() => setIsPlaying(true))
-    //     .catch(() => {
-    //       setIsPlaying(false);
-    //       setAudioAvailable(false);
-    //     });
-    // }
+    if (isPlaying) {
+      audioRef.current.pause();
+      setIsPlaying(false);
+    } else {
+      audioRef.current
+        .play()
+        .then(() => setIsPlaying(true))
+        .catch(() => {
+          setIsPlaying(false);
+          setAudioAvailable(false);
+        });
+    }
   };
 
   return (
@@ -53,7 +53,7 @@ export default function AudioController({ autoPlayTrigger }) {
       />
 
       {/* Container aligned with mobile device frame */}
-      <div className="fixed bottom-6 inset-x-0 mx-auto max-w-[420px] pointer-events-none px-5 flex justify-end z-40">
+      <div className="fixed bottom-6 inset-x-0 mx-auto w-full sm:max-w-[420px] pointer-events-none px-5 flex justify-end z-40">
         <button
           onClick={toggleAudio}
           className={`pointer-events-auto w-11 h-11 rounded-full bg-textColor-secondary/85 text-backgroundColor-primary backdrop-blur-md border-2 border-backgroundColor-primary/90 shadow-lg shadow-black/20 flex items-center justify-center transition-all hover:scale-105 active:scale-95 focus:outline-none ${

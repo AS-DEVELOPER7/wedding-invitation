@@ -163,9 +163,11 @@ export default function SacredInvitationCard() {
                   />
                 </g>
               </svg>
-              <img
+              <Image
                 src={ASSETS.sacredCard.ornamentalFrameTop}
                 alt=""
+                width={960}
+                height={376}
                 className="w-full h-auto block select-none relative z-10"
               />
             </div>
@@ -331,9 +333,11 @@ export default function SacredInvitationCard() {
                   />
                 </g>
               </svg>
-              <img
+              <Image
                 src={ASSETS.sacredCard.ornamentalFrameBottom}
                 alt=""
+                width={960}
+                height={376}
                 className="w-full h-auto block select-none relative z-10"
               />
             </div>

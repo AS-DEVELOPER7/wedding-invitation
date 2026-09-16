@@ -1,39 +1,28 @@
 /**
  * Centralized Asset Registry
- * Update any asset path in this single file to change it across the entire website.
+ * Only contains active, production-verified assets used across the wedding invitation.
  */
 
 export const ASSETS = {
-  // Envelope & Wax Seal Assets
+  // Envelope & Wax Seal
   envelope: {
-    cover: "/images/envelope-cover.jpg",
     waxSeal: "/images/wax-seal-gold.png",
     paperTexture: "/images/paper-texture.jpg",
     pattern: "/images/envelope-pattern.png",
-    patternTransparent: "/images/envelope-pattern-transparent.png",
-    wineCover: "/images/wine-envelope-cover.jpg",
   },
 
   // Hero Section Sunlit Palatial Architecture
   hero: {
-    sunlitPalace: "/images/hero-archway-blended.jpg", // Softly blurred & blended at bottom into SacredInvitationCard background
-    sunlitPalaceSerene: "/images/hero-archway-serene.jpg", // Sharp unblended serene vista (revert anytime)
-    sunlitPalaceClassic: "/images/hero-archway-sunlit.jpg", // Original version with mansion & trees (revert anytime)
-    palaceNight: "/images/palace-night.jpg",
-    lanternLeft: "/svg/lantern-left.svg",
-    lanternRight: "/svg/lantern-right.svg",
-    lanternCenter: "/svg/lantern-center.svg",
+    sunlitPalace: "/images/hero-archway-blended.jpg",
   },
 
-  // Vector Calligraphy & Geometric Motifs
+  // Vector Calligraphy, Logos & Ornamental Motifs
   svg: {
     bismillah: "/svg/bismillah.svg",
-    monogram: "/svg/monogram-aa.svg",
-    flourish: "/images/flourish.png",
+    logoAA: "/svg/logo-aa.svg",
+    logoAATransparent: "/svg/logo-aa-transparent.svg",
     flourishHorizontal: "/images/flourish-horizontal.png",
     flourishVertical: "/images/flourish-vertical.png",
-    geometricCorner: "/svg/geometric-corner.svg",
-    zelligeBorder: "/svg/zellige-border.svg",
   },
 
   // Venue Showcase
@@ -49,11 +38,16 @@ export const ASSETS = {
   // Sacred Invitation Card Assets
   sacredCard: {
     bismillahArtistic: "/images/bismillah-artistic.png",
-    bismillahArtisticGold: "/images/bismillah-artistic-gold.png",
     ornamentalFrame: "/images/ornamental-frame.png",
     ornamentalFrameTop: "/images/ornamental-frame-top.png",
     ornamentalFrameBottom: "/images/ornamental-frame-bottom.png",
     cardPatternGold: "/images/card-pattern-gold.png",
     paperTexture: "/images/paper-texture.jpg",
+  },
+
+  // Program & Itinerary Section Assets
+  program: {
+    hangingLanterns: "/images/hanging-lanterns-gold.png",
+    latticeGold: "/images/program-lattice-gold.png",
   },
 };

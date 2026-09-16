@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 64" width="100" height="64">
+  <defs>
+    <linearGradient id="goldPure" x1="10%" y1="0%" x2="90%" y2="100%">
+      <stop offset="0%" stop-color="#FFF5D6" />
+      <stop offset="30%" stop-color="#ECC86B" />
+      <stop offset="70%" stop-color="#D4AF37" />
+      <stop offset="90%" stop-color="#A57A18" />
+      <stop offset="100%" stop-color="#ECC86B" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Transparent Background Simple Double A Text Logo -->
+  <text x="50" y="47" 
+        font-family="'Playfair Display', Georgia, 'Times New Roman', serif" 
+        font-size="44" 
+        font-weight="700" 
+        letter-spacing="-2.5" 
+        fill="url(#goldPure)" 
+        text-anchor="middle">AA</text>
+</svg>

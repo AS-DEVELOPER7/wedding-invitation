@@ -47,7 +47,7 @@ export default function Home() {
 
       {/* Mobile-Only Dedicated App Container (Edge-to-Edge on Mobile, Phone Bezel on Desktop) */}
       <main
-        className={`relative w-full max-w-[420px] bg-backgroundColor-primary text-textColor-primary selection:bg-borderColor-secondary/30 selection:text-textColor-primary z-10 ${
+        className={`relative w-full sm:max-w-[420px] bg-backgroundColor-primary text-textColor-primary selection:bg-borderColor-secondary/30 selection:text-textColor-primary z-10 ${
           envelopeState === "closed"
             ? "h-[100dvh] sm:h-[min(840px,calc(100dvh-3.5rem))] overflow-hidden"
             : "min-h-screen sm:min-h-[min(840px,calc(100dvh-3.5rem))] overflow-x-hidden"
@@ -76,11 +76,11 @@ export default function Home() {
           {/* The Sacred Family Invitation Card */}
           <SacredInvitationCard />
 
-          {/* Live Countdown & Add to Calendar */}
-          <CountdownSection />
-
           {/* Ceremonies & Events Timeline */}
           <ProgramSection />
+
+          {/* Live Countdown & Add to Calendar */}
+          <CountdownSection />
 
           {/* Venue, Address & Interactive Google Map */}
           <VenueSection />
